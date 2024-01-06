@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: netflix-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: api
+      app: netflix-app
   template:
     metadata:
       labels:
-        app: api
+        app: netflix-app
     spec:
       containers:
-      - name: api
-        image: your-ecr-repo/api:latest
+      - name: netflix-app
+        image: your-ecr-repo/netflix-app:latest
         ports:
         - containerPort: 80
